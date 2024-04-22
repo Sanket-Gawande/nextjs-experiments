@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from "react"
-import "https://checkout.razorpay.com/v1/checkout.js"
+// import "https://checkout.razorpay.com/v1/checkout.js"
 export default function Payment() {
     useEffect(() => {
         var options = {
@@ -10,7 +10,7 @@ export default function Payment() {
             "name": "Acme Corp.",
             "description": "Monthly Test Plan",
             "image": "/your_logo.jpg",
-            "handler": function(response) {
+            "handler": function(response:any) {
                 alert(response.razorpay_payment_id),
                 alert(response.razorpay_subscription_id),
                 alert(response.razorpay_signature);
@@ -28,11 +28,11 @@ export default function Payment() {
                 "color": "#F37254"
             }
         };
-    var rzp1 = new Razorpay(options);
-    document.getElementById('rzp-button1').onclick = function(e) {
-        rzp1.open();
-        e.preventDefault();
-    }
+    // var rzp1 = new Razorpay(options);
+    // document.getElementById('rzp-button1').onclick = function(e) {
+    //     rzp1.open();
+    //     e.preventDefault();
+    // }
      }, [])
     return <div>
         <p>

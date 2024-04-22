@@ -2,7 +2,7 @@
 import { Component, useEffect, useMemo } from 'react';
 import './globals.css';
 import Timer from './_a/Timer';
-import { io } from 'socket.io-client';
+// import { io } from 'socket.io-client';
 
 let sample = "abcdef012356789"
 function getRandomColor() {
@@ -56,7 +56,7 @@ class App extends Component {
             <button onClick={() => this.increasePrice()}>Increment</button>
           </aside>
           <Timer />
-          <Socket />
+          {/* <Socket /> */}
         </main>
       </div>
     )
@@ -65,17 +65,17 @@ class App extends Component {
 
 export default App;
 
-export function Socket() {
-  const socket = useMemo(
-    () => io('http://localhost:5000', { autoConnect: false }),
-    [],
-  );
+// export function Socket() {
+//   const socket = useMemo(
+//     () => io('http://localhost:5000', { autoConnect: false }),
+//     [],
+//   );
 
-  useEffect(() => {
-    socket.connect();
-    return () => {
-      socket.disconnect();
-    };
-  }, [socket]);
-  return <p>Socket  io component</p>
-}
+//   useEffect(() => {
+//     socket.connect();
+//     return () => {
+//       socket.disconnect();
+//     };
+//   }, [socket]);
+//   return <p>Socket  io component</p>
+// }
